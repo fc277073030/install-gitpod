@@ -1,0 +1,15 @@
+components:
+  imageBuilder:
+    registryCerts: []
+    registry:
+      # name must not end with a "/"
+      name: local-registry.arnoo.com/gitpod
+      secretName: image-builder-registry-secret
+      path: secrets/registry-auth.json
+
+  workspace:
+    pullSecret:
+      secretName: image-builder-registry-secret
+
+docker-registry:
+  enabled: false
